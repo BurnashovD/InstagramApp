@@ -14,7 +14,9 @@ final class MainScreenViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navigationTitleLabel: UILabel!
     
-    let refresh = UIRefreshControl()
+    // MARK: - Private properties
+    private let refresh = UIRefreshControl()
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
