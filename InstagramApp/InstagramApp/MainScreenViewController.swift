@@ -68,21 +68,21 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
+        let type = tableCellsTypes[indexPath.row]
+        switch type {
+        case .stories:
             return tableView.dequeueReusableCell(withIdentifier: Constants.storiesCellIdentifier, for: indexPath)
-        case 1, 3, 4:
+        case .post, .secondPost, .thirdPost:
             return tableView.dequeueReusableCell(withIdentifier: Constants.postCellIdentifier, for: indexPath)
-        case 2:
+        case .recomendations:
             return tableView.dequeueReusableCell(withIdentifier: Constants.recomendatCellIdentifier, for: indexPath)
-        default:
-            return UITableViewCell()
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0:
+        let type = tableCellsTypes[indexPath.row]
+        switch type {
+        case .stories:
             return Constants.storiesCellHeight
         default:
             return UITableView.automaticDimension
