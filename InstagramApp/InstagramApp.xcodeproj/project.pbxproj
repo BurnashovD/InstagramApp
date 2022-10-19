@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		A509498128FD7FCA000F1006 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A509498028FD7FCA000F1006 /* AppDelegate.swift */; };
 		A509498328FD7FCA000F1006 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A509498228FD7FCA000F1006 /* SceneDelegate.swift */; };
-		A509498528FD7FCA000F1006 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A509498428FD7FCA000F1006 /* ViewController.swift */; };
+		A509498528FD7FCA000F1006 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A509498428FD7FCA000F1006 /* MainScreenViewController.swift */; };
 		A509498828FD7FCA000F1006 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A509498628FD7FCA000F1006 /* Main.storyboard */; };
 		A509498A28FD7FCC000F1006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A509498928FD7FCC000F1006 /* Assets.xcassets */; };
 		A509498D28FD7FCC000F1006 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A509498B28FD7FCC000F1006 /* LaunchScreen.storyboard */; };
 		A509499828FD7FCC000F1006 /* InstagramAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A509499728FD7FCC000F1006 /* InstagramAppTests.swift */; };
 		A50949A228FD7FCC000F1006 /* InstagramAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50949A128FD7FCC000F1006 /* InstagramAppUITests.swift */; };
 		A50949A428FD7FCC000F1006 /* InstagramAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50949A328FD7FCC000F1006 /* InstagramAppUITestsLaunchTests.swift */; };
+		A50949B228FEDA9B000F1006 /* instaFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A50949B128FEDA9B000F1006 /* instaFont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		A509497D28FD7FCA000F1006 /* InstagramApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A509498028FD7FCA000F1006 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A509498228FD7FCA000F1006 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A509498428FD7FCA000F1006 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A509498428FD7FCA000F1006 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		A509498728FD7FCA000F1006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A509498928FD7FCC000F1006 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A509498C28FD7FCC000F1006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		A509499D28FD7FCC000F1006 /* InstagramAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50949A128FD7FCC000F1006 /* InstagramAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramAppUITests.swift; sourceTree = "<group>"; };
 		A50949A328FD7FCC000F1006 /* InstagramAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A50949B128FEDA9B000F1006 /* instaFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = instaFont.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +101,10 @@
 		A509497F28FD7FCA000F1006 /* InstagramApp */ = {
 			isa = PBXGroup;
 			children = (
+				A50949B028FEDA89000F1006 /* Fonts */,
 				A509498028FD7FCA000F1006 /* AppDelegate.swift */,
 				A509498228FD7FCA000F1006 /* SceneDelegate.swift */,
-				A509498428FD7FCA000F1006 /* ViewController.swift */,
+				A509498428FD7FCA000F1006 /* MainScreenViewController.swift */,
 				A509498628FD7FCA000F1006 /* Main.storyboard */,
 				A509498928FD7FCC000F1006 /* Assets.xcassets */,
 				A509498B28FD7FCC000F1006 /* LaunchScreen.storyboard */,
@@ -125,6 +128,14 @@
 				A50949A328FD7FCC000F1006 /* InstagramAppUITestsLaunchTests.swift */,
 			);
 			path = InstagramAppUITests;
+			sourceTree = "<group>";
+		};
+		A50949B028FEDA89000F1006 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A50949B128FEDA9B000F1006 /* instaFont.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +245,7 @@
 				A509498D28FD7FCC000F1006 /* LaunchScreen.storyboard in Resources */,
 				A509498A28FD7FCC000F1006 /* Assets.xcassets in Resources */,
 				A509498828FD7FCA000F1006 /* Main.storyboard in Resources */,
+				A50949B228FEDA9B000F1006 /* instaFont.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A509498528FD7FCA000F1006 /* ViewController.swift in Sources */,
+				A509498528FD7FCA000F1006 /* MainScreenViewController.swift in Sources */,
 				A509498128FD7FCA000F1006 /* AppDelegate.swift in Sources */,
 				A509498328FD7FCA000F1006 /* SceneDelegate.swift in Sources */,
 			);
