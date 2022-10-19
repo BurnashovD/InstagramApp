@@ -32,7 +32,6 @@ final class MainScreenViewController: UIViewController {
     private func refreshPageAction() {
         tableView.refreshControl = refresh
         refresh.tintColor = .white
-        refresh.addTarget(self, action: #selector(endRefreshAtion), for: .touchDragExit)
         Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(endRefreshAtion), userInfo: nil, repeats: true)
     }
     
@@ -62,12 +61,10 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             return tableView.dequeueReusableCell(withIdentifier: Constants.storiesIdentifyCell, for: indexPath)
-        case 1:
+        case 1, 3, 4:
             return tableView.dequeueReusableCell(withIdentifier: Constants.postIdentifyCell, for: indexPath)
         case 2:
             return tableView.dequeueReusableCell(withIdentifier: Constants.recomendationIdentifyCell, for: indexPath)
-        case 3, 4:
-            return tableView.dequeueReusableCell(withIdentifier: Constants.postIdentifyCell, for: indexPath)
         default:
             return UITableViewCell()
         }
