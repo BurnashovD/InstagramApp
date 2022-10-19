@@ -11,11 +11,12 @@ import UIKit
 final class MainScreenViewController: UIViewController {
 
     // MARK: - IBOutlets
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var navigationTitleLabel: UILabel!
+    @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak private var navigationTitleLabel: UILabel!
     
     // MARK: - Private properties
-    private let refresh = UIRefreshControl()
+    private let refreshControl = UIRefreshControl()
+    private let tableCellsTypes: [TableCellsTypes] = [.stories, .post, .recomendations, .secondPost, .thirdPost]
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -30,22 +31,32 @@ final class MainScreenViewController: UIViewController {
     }
     
     private func refreshPageAction() {
-        tableView.refreshControl = refresh
-        refresh.tintColor = .white
+        tableView.refreshControl = refreshControl
+        refreshControl.tintColor = .white
         Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(endRefreshAtion), userInfo: nil, repeats: true)
     }
     
     @objc private func endRefreshAtion() {
-        refresh.endRefreshing()
+        refreshControl.endRefreshing()
     }
 }
 
 /// Constants
 extension MainScreenViewController {
+    
     enum Constants {
-        static let storiesIdentifyCell = "stories"
-        static let postIdentifyCell = "post"
-        static let recomendationIdentifyCell = "recomendations"
+        static let storiesCellIdentifier = "stories"
+        static let postCellIdentifier = "post"
+        static let recomendatCellIdentifier = "recomendations"
+        static let storiesCellHeight: CGFloat = 110
+    }
+    
+    enum TableCellsTypes {
+        case stories
+        case post
+        case recomendations
+        case secondPost
+        case thirdPost
     }
 }
 
@@ -57,14 +68,13 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         switch indexPath.row {
         case 0:
-            return tableView.dequeueReusableCell(withIdentifier: Constants.storiesIdentifyCell, for: indexPath)
+            return tableView.dequeueReusableCell(withIdentifier: Constants.storiesCellIdentifier, for: indexPath)
         case 1, 3, 4:
-            return tableView.dequeueReusableCell(withIdentifier: Constants.postIdentifyCell, for: indexPath)
+            return tableView.dequeueReusableCell(withIdentifier: Constants.postCellIdentifier, for: indexPath)
         case 2:
-            return tableView.dequeueReusableCell(withIdentifier: Constants.recomendationIdentifyCell, for: indexPath)
+            return tableView.dequeueReusableCell(withIdentifier: Constants.recomendatCellIdentifier, for: indexPath)
         default:
             return UITableViewCell()
         }
@@ -73,7 +83,7 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 110
+            return Constants.storiesCellHeight
         default:
             return UITableView.automaticDimension
         }
