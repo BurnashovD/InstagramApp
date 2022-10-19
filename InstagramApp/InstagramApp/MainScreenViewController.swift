@@ -74,10 +74,8 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             return 110
-        case 1, 2, 3, 4:
-            return UITableView.automaticDimension
         default:
-            return 400
+            return UITableView.automaticDimension
         }
     }
 }
