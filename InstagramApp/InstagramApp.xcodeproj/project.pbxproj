@@ -17,6 +17,9 @@
 		A50949A228FD7FCC000F1006 /* InstagramAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50949A128FD7FCC000F1006 /* InstagramAppUITests.swift */; };
 		A50949A428FD7FCC000F1006 /* InstagramAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50949A328FD7FCC000F1006 /* InstagramAppUITestsLaunchTests.swift */; };
 		A50949B228FEDA9B000F1006 /* instaFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A50949B128FEDA9B000F1006 /* instaFont.ttf */; };
+		A58B94FC2900937800A330F7 /* ActionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B94FB2900937800A330F7 /* ActionsTableViewController.swift */; };
+		A58B94FE290097FC00A330F7 /* ActionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B94FD290097FC00A330F7 /* ActionsModel.swift */; };
+		A58B950029009FB200A330F7 /* ActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B94FF29009FB200A330F7 /* ActionsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		A50949A128FD7FCC000F1006 /* InstagramAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramAppUITests.swift; sourceTree = "<group>"; };
 		A50949A328FD7FCC000F1006 /* InstagramAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A50949B128FEDA9B000F1006 /* instaFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = instaFont.ttf; sourceTree = "<group>"; };
+		A58B94FB2900937800A330F7 /* ActionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsTableViewController.swift; sourceTree = "<group>"; };
+		A58B94FD290097FC00A330F7 /* ActionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsModel.swift; sourceTree = "<group>"; };
+		A58B94FF29009FB200A330F7 /* ActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,9 @@
 				A509498028FD7FCA000F1006 /* AppDelegate.swift */,
 				A509498228FD7FCA000F1006 /* SceneDelegate.swift */,
 				A509498428FD7FCA000F1006 /* MainScreenViewController.swift */,
+				A58B94FB2900937800A330F7 /* ActionsTableViewController.swift */,
+				A58B94FF29009FB200A330F7 /* ActionsTableViewCell.swift */,
+				A58B94FD290097FC00A330F7 /* ActionsModel.swift */,
 				A509498628FD7FCA000F1006 /* Main.storyboard */,
 				A509498928FD7FCC000F1006 /* Assets.xcassets */,
 				A509498B28FD7FCC000F1006 /* LaunchScreen.storyboard */,
@@ -272,7 +281,10 @@
 			files = (
 				A509498528FD7FCA000F1006 /* MainScreenViewController.swift in Sources */,
 				A509498128FD7FCA000F1006 /* AppDelegate.swift in Sources */,
+				A58B94FC2900937800A330F7 /* ActionsTableViewController.swift in Sources */,
+				A58B94FE290097FC00A330F7 /* ActionsModel.swift in Sources */,
 				A509498328FD7FCA000F1006 /* SceneDelegate.swift in Sources */,
+				A58B950029009FB200A330F7 /* ActionsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
