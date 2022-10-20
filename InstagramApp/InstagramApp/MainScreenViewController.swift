@@ -33,7 +33,7 @@ final class MainScreenViewController: UIViewController {
     private func refreshPageAction() {
         tableView.refreshControl = refreshControl
         refreshControl.tintColor = .white
-        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(endRefreshAtion), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(endRefreshAtion), userInfo: nil, repeats: true)
     }
     
     @objc private func endRefreshAtion() {
