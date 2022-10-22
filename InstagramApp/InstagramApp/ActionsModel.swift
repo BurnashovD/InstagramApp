@@ -8,9 +8,10 @@
 import Foundation
 
 // Модель для ячейки
-struct ActionsModel {
+struct Action {
     let profileImageName: String
     let actionText: String
     let objectName: String
     let whenAction: String
+    let subButton: Bool
 }

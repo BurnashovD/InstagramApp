@@ -18,14 +18,15 @@ final class ActionsTableViewController: UITableViewController {
         label.font = UIFont.systemFont(ofSize: Constants.navBarTitleFontSize, weight: .bold)
         return label
     }()
-
-    // MARK: - Private properties
+    
     private let actionsRefreshControl = UIRefreshControl()
+    
+    // MARK: - Private properties
     private let headersPeriods: [HeaderPeriods] = [.today, .thisWeek, .longTimeAgo]
     
-    private var todaysActions: [ActionsModel] = []
-    private var thisWeekActions: [ActionsModel] = []
-    private var longTimeAgoActions: [ActionsModel] = []
+     var todaysActions: [Action] = []
+    private var thisWeekActions: [Action] = []
+    private var longTimeAgoActions: [Action] = []
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -41,81 +42,81 @@ final class ActionsTableViewController: UITableViewController {
     }
     
     private func createActions() {
-        let first = ActionsModel(profileImageName: Constants.avatarImageName,
+        let firstAction = Action(profileImageName: Constants.avatarImageName,
                                  actionText: Constants.firstActionText,
                                  objectName: Constants.firstDogImageName,
-                                 whenAction: Constants.threeHoursAgoAction)
+                                 whenAction: Constants.threeHoursAgoAction, subButton: true)
         
-        let third = ActionsModel(profileImageName: Constants.secondDogImageName,
+        let thirdAction = Action(profileImageName: Constants.secondDogImageName,
                                  actionText: Constants.thirdActionText,
                                  objectName: Constants.sunImageName,
-                                 whenAction: Constants.threeDaysAgoText)
+                                 whenAction: Constants.threeDaysAgoText, subButton: false)
         
-        let four = ActionsModel(profileImageName: Constants.firstDogImageName,
+        let fourAction = Action(profileImageName: Constants.firstDogImageName,
                                 actionText: Constants.fourActionText,
                                 objectName: Constants.secondDogImageName,
-                                whenAction: Constants.fiveDaysAgoText)
+                                whenAction: Constants.fiveDaysAgoText, subButton: false)
         
-        let five = ActionsModel(profileImageName: Constants.pizzaImageName,
+        let fiveAction = Action(profileImageName: Constants.pizzaImageName,
                                 actionText: Constants.fiveActionText,
                                 objectName: Constants.avatarImageName,
-                                whenAction: Constants.oneDayAgoText)
+                                whenAction: Constants.oneDayAgoText, subButton: true)
         
-        let six = ActionsModel(profileImageName: Constants.secondDogImageName,
+        let sixAction = Action(profileImageName: Constants.secondDogImageName,
                                actionText: Constants.sixActionText,
                                objectName: Constants.sunImageName,
-                               whenAction: Constants.threeDaysAgoText)
+                               whenAction: Constants.threeDaysAgoText, subButton: false)
         
-        let seven = ActionsModel(profileImageName: Constants.firstDogImageName,
+        let sevenAction = Action(profileImageName: Constants.firstDogImageName,
                                  actionText: Constants.fourActionText,
                                  objectName: Constants.secondDogImageName,
-                                 whenAction: Constants.fiveDaysAgoText)
+                                 whenAction: Constants.fiveDaysAgoText, subButton: false)
         
-        let eight = ActionsModel(profileImageName: Constants.pizzaImageName,
+        let eightAction = Action(profileImageName: Constants.pizzaImageName,
                                  actionText: Constants.fiveActionText,
                                  objectName: Constants.avatarImageName,
-                                 whenAction: Constants.oneDayAgoText)
+                                 whenAction: Constants.oneDayAgoText, subButton: false)
         
-        let nine = ActionsModel(profileImageName: Constants.secondDogImageName,
-                                actionText: Constants.sixActionText,
+        let nineAction = Action(profileImageName: Constants.secondDogImageName,
+                                actionText: Constants.firstActionText,
                                 objectName: Constants.sunImageName,
-                                whenAction: Constants.threeDaysAgoText)
+                                whenAction: Constants.threeDaysAgoText, subButton: true)
         
-        todaysActions.append(first)
-        thisWeekActions.append(third)
-        thisWeekActions.append(four)
-        thisWeekActions.append(five)
-        thisWeekActions.append(six)
-        longTimeAgoActions.append(seven)
-        longTimeAgoActions.append(eight)
-        longTimeAgoActions.append(nine)
+        todaysActions.append(firstAction)
+        thisWeekActions.append(thirdAction)
+        thisWeekActions.append(fourAction)
+        thisWeekActions.append(fiveAction)
+        thisWeekActions.append(sixAction)
+        longTimeAgoActions.append(sevenAction)
+        longTimeAgoActions.append(eightAction)
+        longTimeAgoActions.append(nineAction)
     }
-
+    
     private func refreshPageAction() {
         actionsRefreshControl.tintColor = .white
-        self.refreshControl = actionsRefreshControl
+        refreshControl = actionsRefreshControl
         actionsRefreshControl.addTarget(self, action: #selector(endRefreshAction), for: .valueChanged)
     }
     
     @objc private func endRefreshAction() {
-        let second = ActionsModel(profileImageName: Constants.pizzaImageName,
+        let secondAction = Action(profileImageName: Constants.pizzaImageName,
                                   actionText: Constants.sixActionText,
                                   objectName: Constants.firstDogImageName,
-                                  whenAction: Constants.oneMinutieAgoText)
-        todaysActions.append(second)
+                                  whenAction: Constants.oneMinutieAgoText, subButton: false)
+        todaysActions.append(secondAction)
         let indexPathNewRow = IndexPath(row: todaysActions.count - 1, section: 0)
-        self.tableView.insertRows(at: [indexPathNewRow], with: .automatic)
+        tableView.insertRows(at: [indexPathNewRow], with: .automatic)
         actionsRefreshControl.endRefreshing()
     }
+}
     
     // MARK: - UITableViewDelegate, UITableViewDataSource
-
+    extension ActionsTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         let type = headersPeriods[section]
         switch type {
         case .today:
@@ -166,13 +167,13 @@ final class ActionsTableViewController: UITableViewController {
         return label
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return UITableView.automaticDimension
     }
 }
 
+/// Constants and HeaderPeriods enum
 extension ActionsTableViewController {
-    /// Constants
     enum Constants {
         static let actionsText = "Действия"
         static let avatarImageName = "Avatar"
@@ -180,14 +181,14 @@ extension ActionsTableViewController {
         static let secondDogImageName = "dogg"
         static let pizzaImageName = "pizza"
         static let sunImageName = "sun"
-        static let todayText = "Сегодня"
-        static let thisWeekText = "На этой неделе"
-        static let longTimeAgoText = "Ну очень давно"
+        static let todayText = " Сегодня"
+        static let thisWeekText = " На этой неделе"
+        static let longTimeAgoText = " Ну очень давно"
         static let actionsCellIdentifier = "actions"
-        static let firstActionText = "lowbattery_0 понравился ваш комментарий"
+        static let firstActionText = "lowbattery_0 подписался на вас"
         static let thirdActionText = "JackSock оставил комментарий: \"Отлично выглядишь!\""
         static let fourActionText = "Roma1 понравилась ваша фотография"
-        static let fiveActionText = "Danil2 нравится ваше видео"
+        static let fiveActionText = "Danil2 подписался на вас"
         static let sixActionText = "Qwerty123 нравится ваше фото"
         static let threeHoursAgoAction = "3ч"
         static let oneMinutieAgoText = "1мин"
