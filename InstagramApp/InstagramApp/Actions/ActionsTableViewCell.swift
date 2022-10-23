@@ -14,7 +14,7 @@ final class ActionsTableViewCell: UITableViewCell {
     @IBOutlet weak private var whenActionWas: UILabel!
     @IBOutlet weak private var actionLabel: UILabel!
     @IBOutlet weak private var profileImageView: UIImageView!
-    @IBOutlet weak var objectButton: UIButton!
+    @IBOutlet weak private var objectButton: UIButton!
     
     // MARK: - awakeFromNib
     override func awakeFromNib() {
