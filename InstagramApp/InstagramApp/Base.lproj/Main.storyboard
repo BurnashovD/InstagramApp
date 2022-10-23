@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -559,7 +560,7 @@
                                                     <buttonConfiguration key="configuration" style="plain" title="Все"/>
                                                 </button>
                                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvQ-Sd-0XR">
-                                                    <rect key="frame" x="-6" y="47" width="606" height="232"/>
+                                                    <rect key="frame" x="-6" y="47" width="396" height="232"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7YF-Hv-4sf">
                                                             <rect key="frame" x="192" y="8" width="176" height="210"/>
@@ -759,7 +760,7 @@
         <scene sceneID="Jr1-MG-bcc">
             <objects>
                 <tableViewController id="8J1-8i-rgx" customClass="ProfileTableViewController" customModule="InstagramApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="tBR-rm-gGW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="tBR-rm-gGW">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1036,20 +1037,45 @@
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="789"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="iRr-j8-EHB">
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iRr-j8-EHB">
                                             <rect key="frame" x="0.0" y="8" width="390" height="32"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="390" id="WN3-8f-jcj"/>
                                             </constraints>
                                             <segments>
-                                                <segment title="" image="Grid"/>
-                                                <segment title="" image="IGTV"/>
-                                                <segment title="" image="Tags"/>
+                                                <segment title="">
+                                                    <imageReference key="image" image="tray.full" catalog="system" renderingMode="hierarchical-single">
+                                                        <hierarchicalColors>
+                                                            <color white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color systemColor="secondaryLabelColor"/>
+                                                            <color systemColor="tertiaryLabelColor"/>
+                                                        </hierarchicalColors>
+                                                    </imageReference>
+                                                </segment>
+                                                <segment title="">
+                                                    <imageReference key="image" image="tv.circle" catalog="system" renderingMode="hierarchical-single">
+                                                        <hierarchicalColors>
+                                                            <color white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color systemColor="secondaryLabelColor"/>
+                                                            <color systemColor="tertiaryLabelColor"/>
+                                                        </hierarchicalColors>
+                                                    </imageReference>
+                                                </segment>
+                                                <segment title="">
+                                                    <imageReference key="image" image="person.fill" catalog="system" renderingMode="hierarchical-single">
+                                                        <hierarchicalColors>
+                                                            <color white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color systemColor="secondaryLabelColor"/>
+                                                            <color systemColor="tertiaryLabelColor"/>
+                                                        </hierarchicalColors>
+                                                    </imageReference>
+                                                </segment>
                                             </segments>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="selectedSegmentTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </segmentedControl>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DCx-r5-Kvw">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DCx-r5-Kvw">
                                             <rect key="frame" x="0.0" y="47" width="390" height="814"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -1102,7 +1128,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="contentCollectionView" destination="DCx-r5-Kvw" id="eSp-Oc-OUT"/>
+                                    <outlet property="contentCollectionView" destination="DCx-r5-Kvw" id="fQH-ef-WER"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1290,14 +1316,11 @@
         <image name="Direct" width="25" height="23"/>
         <image name="Frame 1" width="65" height="65"/>
         <image name="Frame 10" width="118" height="23"/>
-        <image name="Grid" width="23" height="23"/>
         <image name="Heart - Outline" width="24" height="22"/>
         <image name="Home - Fill" width="22" height="22"/>
-        <image name="IGTV" width="23" height="26"/>
         <image name="Oval 5" width="22" height="22"/>
         <image name="Reel" width="22" height="22"/>
         <image name="Search" width="22" height="23"/>
-        <image name="Tags" width="22" height="23"/>
         <image name="Union" width="12" height="12"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="chevron.down.circle" catalog="system" width="128" height="123"/>
@@ -1306,11 +1329,20 @@
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="em3" width="4122" height="2744"/>
         <image name="musk" width="1200" height="1200"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="pizza" width="130" height="130"/>
         <image name="profile" width="23" height="23"/>
         <image name="spaceX" width="1024" height="1024"/>
+        <image name="tray.full" catalog="system" width="128" height="88"/>
+        <image name="tv.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
