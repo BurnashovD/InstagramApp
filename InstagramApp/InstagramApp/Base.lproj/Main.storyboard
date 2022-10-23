@@ -259,7 +259,7 @@
                                                             <rect key="frame" x="8" y="11" width="67" height="68"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain">
-                                                                <backgroundConfiguration key="background" cornerRadius="46" image="pngwing.com (8)"/>
+                                                                <backgroundConfiguration key="background" cornerRadius="46" image="pizza"/>
                                                                 <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                                             </buttonConfiguration>
                                                         </button>
@@ -773,13 +773,13 @@
         <scene sceneID="TgQ-60-7Jp">
             <objects>
                 <navigationController id="QHl-n2-Nks" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Shopping" id="YC6-qM-M51"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IcS-ce-Qn9">
+                    <tabBarItem key="tabBarItem" title="" image="Heart - Outline" id="YC6-qM-M51"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="IcS-ce-Qn9">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="dEF-Jo-dQi" kind="relationship" relationship="rootViewController" id="sTb-gF-ZRM"/>
+                        <segue destination="sgz-Eh-pF5" kind="relationship" relationship="rootViewController" id="xzd-6a-boc"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SnJ-be-yMu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -790,7 +790,7 @@
         <scene sceneID="iAn-od-xJ4">
             <objects>
                 <navigationController id="d7L-SK-IVp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Profile - Outline" id="cgL-03-wyR"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile" id="cgL-03-wyR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nkQ-3b-AbC">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -808,13 +808,12 @@
             <objects>
                 <viewController id="wlc-E0-i9m" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="is8-YW-OrL">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <viewLayoutGuide key="safeArea" id="Hxk-bH-UAW"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="rNq-DX-SLF"/>
-                    <size key="freeformSize" width="390" height="1000"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TvW-zZ-cu9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -836,21 +835,80 @@
             </objects>
             <point key="canvasLocation" x="1441.5384615384614" y="1360.6635071090047"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="g2T-Su-35Q">
+        <!--Actions Table View Controller-->
+        <scene sceneID="few-Ti-jW1">
             <objects>
-                <viewController id="dEF-Jo-dQi" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="duJ-c0-SXk">
+                <tableViewController id="sgz-Eh-pF5" customClass="ActionsTableViewController" customModule="InstagramApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="rWg-bb-wjE">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="jNx-Qh-L3T"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="DDw-WK-JDj"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EYI-SL-hab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="actions" rowHeight="69" id="4TR-h5-XC6" customClass="ActionsTableViewCell" customModule="InstagramApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="390" height="69"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4TR-h5-XC6" id="XEt-K4-sYS">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="69"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oe8-Ey-sgd">
+                                            <rect key="frame" x="11" y="12" width="55" height="55"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="55" id="9qf-HY-qoE"/>
+                                                <constraint firstAttribute="height" constant="55" id="TMG-ax-Wrl"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qn-HO-VOH">
+                                            <rect key="frame" x="89" y="20" width="151" height="47"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="47" id="dmi-6N-DBw"/>
+                                                <constraint firstAttribute="width" constant="151" id="upN-0B-kbi"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nv4-Ly-6Gk">
+                                            <rect key="frame" x="242" y="44" width="31" height="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGn-sm-NoX">
+                                            <rect key="frame" x="273" y="29" width="111" height="23"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6qn-HO-VOH" firstAttribute="top" secondItem="XEt-K4-sYS" secondAttribute="top" constant="20" symbolic="YES" id="AAD-k3-mNT"/>
+                                        <constraint firstItem="6qn-HO-VOH" firstAttribute="leading" secondItem="Oe8-Ey-sgd" secondAttribute="trailing" constant="23" id="EsQ-gY-FYM"/>
+                                        <constraint firstItem="Oe8-Ey-sgd" firstAttribute="leading" secondItem="XEt-K4-sYS" secondAttribute="leading" constant="11" id="HfW-EV-54R"/>
+                                        <constraint firstItem="Oe8-Ey-sgd" firstAttribute="top" secondItem="XEt-K4-sYS" secondAttribute="top" constant="12" id="PsI-2Y-xrp"/>
+                                        <constraint firstItem="nv4-Ly-6Gk" firstAttribute="top" secondItem="XEt-K4-sYS" secondAttribute="top" constant="44" id="dQI-UQ-J9z"/>
+                                        <constraint firstAttribute="bottom" secondItem="Oe8-Ey-sgd" secondAttribute="bottom" constant="2" id="g9L-Pu-a1k"/>
+                                        <constraint firstItem="nv4-Ly-6Gk" firstAttribute="leading" secondItem="6qn-HO-VOH" secondAttribute="trailing" constant="2" id="gz9-h2-9Dv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="actionLabel" destination="6qn-HO-VOH" id="u1N-GY-xrD"/>
+                                    <outlet property="objectButton" destination="ZGn-sm-NoX" id="64m-wk-DKq"/>
+                                    <outlet property="profileImageView" destination="Oe8-Ey-sgd" id="SBv-qe-kSv"/>
+                                    <outlet property="whenActionWas" destination="nv4-Ly-6Gk" id="kNB-ey-XjO"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sgz-Eh-pF5" id="3EV-iZ-X1a"/>
+                            <outlet property="delegate" destination="sgz-Eh-pF5" id="GTg-BH-IDq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Dy5-YX-arn"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZE6-9V-u3A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2531" y="1361"/>
+            <point key="canvasLocation" x="2567.6923076923076" y="1360.6635071090047"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="B57-sT-5Oj">
@@ -878,14 +936,13 @@
         <image name="Heart - Outline" width="24" height="22"/>
         <image name="Home - Fill" width="22" height="22"/>
         <image name="Oval 5" width="22" height="22"/>
-        <image name="Profile - Outline" width="23" height="23"/>
         <image name="Reel" width="22" height="22"/>
         <image name="Search" width="22" height="23"/>
-        <image name="Shopping" width="20" height="22"/>
         <image name="Union" width="12" height="12"/>
         <image name="depositphotos_60759161-stock-photo-blank-sticky-notes" width="600" height="400"/>
         <image name="dog" width="612" height="408"/>
-        <image name="pngwing.com (8)" width="130" height="130"/>
+        <image name="pizza" width="130" height="130"/>
+        <image name="profile" width="23" height="23"/>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
