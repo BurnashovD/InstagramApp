@@ -8,4 +8,13 @@
 import UIKit
 
 // Класс отвечает за ячейку CollectionView c изображением пользователя
-final class ContentCollectionViewCell: UICollectionViewCell {}
+final class ContentCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+    // MARK: - Public methods
+     func refresh(_ model: ProfilePhotos) {
+        profileImageView.image = UIImage(named: model.imageViewName)
+    }
+}

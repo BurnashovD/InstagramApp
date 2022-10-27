@@ -9,8 +9,8 @@ import UIKit
 
 // Класс отвечает за вкладку "Действия"
 final class ActionsTableViewController: UITableViewController {
-    
     // MARK: - Visual components
+
     private let navBarTitleLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.actionsText
@@ -18,70 +18,73 @@ final class ActionsTableViewController: UITableViewController {
         label.font = UIFont.systemFont(ofSize: Constants.navBarTitleFontSize, weight: .bold)
         return label
     }()
-    
+
     private let actionsRefreshControl = UIRefreshControl()
-    
+
     // MARK: - Private properties
+
     private let headersPeriods: [HeaderPeriods] = [.today, .thisWeek, .longTimeAgo]
-    
-     var todaysActions: [Action] = []
+
+    var todaysActions: [Action] = []
     private var thisWeekActions: [Action] = []
     private var longTimeAgoActions: [Action] = []
-    
+
     // MARK: - LifeCycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavBar()
         createActions()
         refreshPageAction()
     }
-    
+
     // MARK: - Private methods
+
     private func configNavBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: navBarTitleLabel)
     }
-    
+
     private func createActions() {
         let firstAction = Action(profileImageName: Constants.avatarImageName,
                                  actionText: Constants.firstActionText,
                                  objectName: Constants.firstDogImageName,
                                  whenAction: Constants.threeHoursAgoAction, subButton: true)
-        
+
         let thirdAction = Action(profileImageName: Constants.secondDogImageName,
                                  actionText: Constants.thirdActionText,
                                  objectName: Constants.sunImageName,
                                  whenAction: Constants.threeDaysAgoText, subButton: false)
-        
+
         let fourAction = Action(profileImageName: Constants.firstDogImageName,
                                 actionText: Constants.fourActionText,
                                 objectName: Constants.secondDogImageName,
                                 whenAction: Constants.fiveDaysAgoText, subButton: false)
-        
+
         let fiveAction = Action(profileImageName: Constants.pizzaImageName,
                                 actionText: Constants.fiveActionText,
                                 objectName: Constants.avatarImageName,
                                 whenAction: Constants.oneDayAgoText, subButton: true)
-        
+
         let sixAction = Action(profileImageName: Constants.secondDogImageName,
                                actionText: Constants.sixActionText,
                                objectName: Constants.sunImageName,
                                whenAction: Constants.threeDaysAgoText, subButton: false)
-        
+
         let sevenAction = Action(profileImageName: Constants.firstDogImageName,
                                  actionText: Constants.fourActionText,
                                  objectName: Constants.secondDogImageName,
                                  whenAction: Constants.fiveDaysAgoText, subButton: false)
-        
+
         let eightAction = Action(profileImageName: Constants.pizzaImageName,
                                  actionText: Constants.fiveActionText,
                                  objectName: Constants.avatarImageName,
                                  whenAction: Constants.oneDayAgoText, subButton: false)
-        
+
         let nineAction = Action(profileImageName: Constants.secondDogImageName,
                                 actionText: Constants.firstActionText,
                                 objectName: Constants.sunImageName,
                                 whenAction: Constants.threeDaysAgoText, subButton: true)
-        
+
         todaysActions.append(firstAction)
         thisWeekActions.append(thirdAction)
         thisWeekActions.append(fourAction)
@@ -91,13 +94,13 @@ final class ActionsTableViewController: UITableViewController {
         longTimeAgoActions.append(eightAction)
         longTimeAgoActions.append(nineAction)
     }
-    
+
     private func refreshPageAction() {
         actionsRefreshControl.tintColor = .white
         refreshControl = actionsRefreshControl
         actionsRefreshControl.addTarget(self, action: #selector(endRefreshAction), for: .valueChanged)
     }
-    
+
     @objc private func endRefreshAction() {
         let secondAction = Action(profileImageName: Constants.pizzaImageName,
                                   actionText: Constants.sixActionText,
@@ -109,14 +112,15 @@ final class ActionsTableViewController: UITableViewController {
         actionsRefreshControl.endRefreshing()
     }
 }
-    
-    // MARK: - UITableViewDelegate, UITableViewDataSource
-    extension ActionsTableViewController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
+
+extension ActionsTableViewController {
+    override func numberOfSections(in _: UITableView) -> Int {
         return 3
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         let type = headersPeriods[section]
         switch type {
         case .today:
@@ -129,11 +133,10 @@ final class ActionsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.actionsCellIdentifier, for: indexPath) as? ActionsTableViewCell else { return UITableViewCell()}
-  
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.actionsCellIdentifier, for: indexPath) as? ActionsTableViewCell else { return UITableViewCell() }
+
         let type = headersPeriods[indexPath.section]
-        
+
         switch type {
         case .today:
             let item = todaysActions[indexPath.row]
@@ -147,15 +150,15 @@ final class ActionsTableViewController: UITableViewController {
         }
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+    override func tableView(_: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         label.backgroundColor = .black
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: Constants.headerLabelFontSize, weight: .heavy)
-        
+
         let type = headersPeriods[section]
-        
+
         switch type {
         case .today:
             label.text = Constants.todayText
@@ -166,9 +169,9 @@ final class ActionsTableViewController: UITableViewController {
         }
         return label
     }
-    
-        override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return UITableView.automaticDimension
+
+    override func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 
@@ -198,7 +201,7 @@ extension ActionsTableViewController {
         static let navBarTitleFontSize: CGFloat = 30
         static let headerLabelFontSize: CGFloat = 16
     }
-    
+
     enum HeaderPeriods {
         case today
         case thisWeek

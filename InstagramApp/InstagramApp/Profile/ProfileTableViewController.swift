@@ -9,20 +9,23 @@ import UIKit
 
 // Класс отвечает за страницу с профилем пользователя
 final class ProfileTableViewController: UITableViewController {
-    
     // MARK: - Visual Components
-    let refresControl = UIRefreshControl()
-    
+
+    private let refresControl = UIRefreshControl()
+
     // MARK: - Private properties
-    let cellsTypes: [CellsTypes] = [.profileInfo, .userInfo, .stories, .content]
-    
+
+    private let cellsTypes: [CellsTypes] = [.profileInfo, .userInfo, .stories, .content]
+
     // MARK: - LifeCycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshPageAction()
     }
-    
+
     // MARK: - Private methods
+
     private func refreshPageAction() {
         refresControl.tintColor = .white
         refreshControl = refresControl
@@ -31,7 +34,7 @@ final class ProfileTableViewController: UITableViewController {
                              selector: #selector(endRefreshAction),
                              userInfo: nil, repeats: true)
     }
-    
+
     @objc private func endRefreshAction() {
         refresControl.endRefreshing()
     }
@@ -45,7 +48,7 @@ extension ProfileTableViewController {
         static let storiesCellIdentifier = "storiesCell"
         static let contentCellIdentifier = "content"
     }
-    
+
     enum CellsTypes {
         case profileInfo
         case userInfo
@@ -55,12 +58,13 @@ extension ProfileTableViewController {
 }
 
 // MARK: - UITableViewControllerDelegate, UITableViewControllerDataSource
+
 extension ProfileTableViewController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in _: UITableView) -> Int {
         return 4
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return 1
     }
 
@@ -81,8 +85,8 @@ extension ProfileTableViewController {
             return cell
         }
     }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+    override func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 }

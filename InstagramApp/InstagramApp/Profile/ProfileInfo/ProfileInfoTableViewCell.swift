@@ -8,14 +8,4 @@
 import UIKit
 
 // Класс отвечает за ячейку TableView с информацией профиля пользователя
-final class ProfileInfoTableViewCell: UITableViewCell {
-
-    // MARK: - awakeFromNib
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-}
+final class ProfileInfoTableViewCell: UITableViewCell {}

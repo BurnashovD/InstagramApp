@@ -548,13 +548,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="290"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рекомендуем вам" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4u-XX-X63">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Рекомендуем вам" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4u-XX-X63">
                                                     <rect key="frame" x="20" y="11" width="149" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGs-Eg-ANg">
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGs-Eg-ANg">
                                                     <rect key="frame" x="336" y="4" width="54" height="35"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Все"/>
@@ -1096,7 +1096,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="123.5" height="130"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="em3" translatesAutoresizingMaskIntoConstraints="NO" id="FZc-Ob-sce">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FZc-Ob-sce">
                                                                 <rect key="frame" x="0.0" y="0.0" width="123.66666666666667" height="130"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="130" id="Bjt-BY-sS2"/>
@@ -1112,6 +1112,9 @@
                                                         </constraints>
                                                     </collectionViewCellContentView>
                                                     <size key="customSize" width="123.5" height="130"/>
+                                                    <connections>
+                                                        <outlet property="profileImageView" destination="FZc-Ob-sce" id="RJq-xC-GCa"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
@@ -1327,7 +1330,6 @@
         <image name="depositphotos_60759161-stock-photo-blank-sticky-notes" width="600" height="400"/>
         <image name="dog" width="612" height="408"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
-        <image name="em3" width="4122" height="2744"/>
         <image name="musk" width="1200" height="1200"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="pizza" width="130" height="130"/>
