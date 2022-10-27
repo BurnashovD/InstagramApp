@@ -15,3 +15,7 @@ struct Action {
     let whenAction: String
     let subButton: Bool
 }
+
+struct ProfilePhotos {
+    let imageViewName: String
+}
